@@ -1,0 +1,60 @@
+{
+  "name": "bip-keychain",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@phosphor-icons/react": "^2.0.14",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bip39": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "sonner": "^2.0.7",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.68",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "jest": "^27.5.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/components/ui/button$": "<rootDir>/src/components/__mocks__/button.tsx",
+      "^@/components/ui/textarea$": "<rootDir>/src/components/__mocks__/textarea.tsx",
+      "^@/components/ui/label$": "<rootDir>/src/components/__mocks__/label.tsx",
+      "^@/components/ui/select$": "<rootDir>/src/components/__mocks__/select.tsx",
+      "^@/components/ui/alert$": "<rootDir>/src/components/__mocks__/alert.tsx",
+      "^@/components/ui/badge$": "<rootDir>/src/components/__mocks__/badge.tsx",
+      "^@/components/ui/card$": "<rootDir>/src/components/__mocks__/card.tsx",
+      "^@github/spark/hooks$": "<rootDir>/src/components/__mocks__/spark-hooks.tsx"
+    }
+  }
+}
