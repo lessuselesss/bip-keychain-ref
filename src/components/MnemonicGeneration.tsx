@@ -66,6 +66,14 @@ export function MnemonicGenerator({ mnemonic, setMnemonic }: MnemonicGeneratorPr
   const handleInputChange = (value: string) => {
     setMnemonic(value)
     validateMnemonic(value)
+
+    const trimmed = value.trim()
+    if (bip39.validateMnemonic(trimmed)) {
+      const numWords = trimmed.split(/\s+/).filter(Boolean).length
+      if (numWords === 12 || numWords === 24) {
+        setWordCount(numWords.toString())
+      }
+    }
   }
 
   const loadSampleMnemonic = () => {
