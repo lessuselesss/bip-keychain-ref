@@ -82,7 +82,12 @@ export function KeyDerivation({ mnemonic }: KeyDerivationProps) {
         // Special handling for semantic path - no account replacement needed
         setCustomPath(bipInfo.basePath)
       } else {
-        const path = bipInfo.basePath.replace("0'", `${account}'`)
+        const parts = bipInfo.basePath.split('/')
+        // The account is the 4th part of the path (index 3), e.g., m/44'/0'/0'
+        if (parts.length > 3) {
+          parts[3] = `${account}'`
+        }
+        const path = parts.join('/')
         setCustomPath(path)
       }
     }
