@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs'
+import { Alert, AlertDescription } from './components/ui/alert'
 import { Shield, Key, Info } from '@phosphor-icons/react'
-import { MnemonicGenerator } from '@/components/MnemonicGeneration'
-import { KeyDerivation } from '@/components/KeyDerivation'
-import { PathExplorer } from '@/components/PathExplorer'
-import { SemanticPath } from '@/components/SemanticPath'
+import { MnemonicGenerator } from './components/MnemonicGeneration'
+import { KeyDerivation } from './components/KeyDerivation'
+import { PathExplorer } from './components/PathExplorer'
+import { SemanticPath } from './components/SemanticPath'
 
 function App() {
   const [mnemonic, setMnemonic] = useState('')
