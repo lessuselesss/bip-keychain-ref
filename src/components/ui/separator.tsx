@@ -1,11 +1,11 @@
-import React from 'react';
+import { forwardRef, type HTMLAttributes } from 'react';
 
-export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SeparatorProps extends HTMLAttributes<HTMLDivElement> {
   orientation?: 'horizontal' | 'vertical';
   decorative?: boolean;
 }
 
-export const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
+export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
   ({ className = '', orientation = 'horizontal', decorative = true, ...props }, ref) => (
     <div
       ref={ref}

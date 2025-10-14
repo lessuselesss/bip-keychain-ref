@@ -1,8 +1,8 @@
-import React from 'react';
+import { forwardRef, type HTMLAttributes } from 'react';
 
-export const Alert = React.forwardRef<
+export const Alert = forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLAttributes<HTMLDivElement>
 >(({ className = '', ...props }, ref) => (
   <div
     ref={ref}
@@ -13,9 +13,9 @@ export const Alert = React.forwardRef<
 ));
 Alert.displayName = 'Alert';
 
-export const AlertDescription = React.forwardRef<
+export const AlertDescription = forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+  HTMLAttributes<HTMLParagraphElement>
 >(({ className = '', ...props }, ref) => (
   <div
     ref={ref}

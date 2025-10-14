@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import { createContext, useContext, forwardRef, type ReactNode, type FC, type HTMLAttributes, type ButtonHTMLAttributes } from 'react';
 
 interface TabsContextType {
   value: string;
@@ -10,11 +10,11 @@ const TabsContext = createContext<TabsContextType | undefined>(undefined);
 export interface TabsProps {
   value: string;
   onValueChange: (value: string) => void;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-export const Tabs: React.FC<TabsProps> = ({ value, onValueChange, children, className = '' }) => {
+export const Tabs: FC<TabsProps> = ({ value, onValueChange, children, className = '' }) => {
   return (
     <TabsContext.Provider value={{ value, onValueChange }}>
       <div className={className}>{children}</div>
@@ -22,9 +22,9 @@ export const Tabs: React.FC<TabsProps> = ({ value, onValueChange, children, clas
   );
 };
 
-export const TabsList = React.forwardRef<
+export const TabsList = forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLAttributes<HTMLDivElement>
 >(({ className = '', ...props }, ref) => (
   <div
     ref={ref}
@@ -34,11 +34,11 @@ export const TabsList = React.forwardRef<
 ));
 TabsList.displayName = 'TabsList';
 
-export interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface TabsTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   value: string;
 }
 
-export const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
+export const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>(
   ({ className = '', value, ...props }, ref) => {
     const context = useContext(TabsContext);
     if (!context) throw new Error('TabsTrigger must be used within Tabs');
@@ -62,11 +62,11 @@ export const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>
 );
 TabsTrigger.displayName = 'TabsTrigger';
 
-export interface TabsContentProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TabsContentProps extends HTMLAttributes<HTMLDivElement> {
   value: string;
 }
 
-export const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
+export const TabsContent = forwardRef<HTMLDivElement, TabsContentProps>(
   ({ className = '', value, ...props }, ref) => {
     const context = useContext(TabsContext);
     if (!context) throw new Error('TabsContent must be used within Tabs');

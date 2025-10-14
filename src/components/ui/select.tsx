@@ -1,8 +1,8 @@
-import React from 'react';
+import { forwardRef, type SelectHTMLAttributes, type ReactNode } from 'react';
 
-export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {}
+export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {}
 
-export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   ({ className = '', children, ...props }, ref) => {
     return (
       <select
@@ -19,8 +19,8 @@ Select.displayName = 'Select';
 
 // Additional components for compatibility with shadcn-style API
 export const SelectTrigger = Select;
-export const SelectValue = ({ placeholder, ...props }: { placeholder?: string; children?: React.ReactNode }) => null;
-export const SelectContent = ({ children, ...props }: { children: React.ReactNode }) => <>{children}</>;
-export const SelectItem = ({ value, children, ...props }: { value: string; children: React.ReactNode }) => (
+export const SelectValue = ({ placeholder, ...props }: { placeholder?: string; children?: ReactNode }) => null;
+export const SelectContent = ({ children, ...props }: { children: ReactNode }) => <>{children}</>;
+export const SelectItem = ({ value, children, ...props }: { value: string; children: ReactNode }) => (
   <option value={value} {...props}>{children}</option>
 );
