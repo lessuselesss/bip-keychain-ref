@@ -1,2 +1,2 @@
-export const Alert = ({ children, ...props }) => <div {...props}>{children}</div>;
-export const AlertDescription = ({ children, ...props }) => <div {...props}>{children}</div>;
+export const Alert = ({ children, ...props }: any) => <div {...props}>{children}</div>;
+export const AlertDescription = ({ children, ...props }: any) => <div {...props}>{children}</div>;

@@ -1,3 +1,3 @@
-export const Button = ({ children, ...props }) => (
+export const Button = ({ children, ...props }: any) => (
   <button {...props}>{children}</button>
 );

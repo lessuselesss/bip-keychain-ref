@@ -1,1 +1,1 @@
-export const Textarea = (props) => <textarea {...props} />;
+export const Textarea = (props: any) => <textarea {...props} />;

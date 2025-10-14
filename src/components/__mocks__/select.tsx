@@ -2,7 +2,7 @@ import { Children } from 'react';
 
 // A simple mock that renders a native select element.
 // This is enough to test the functionality of the component using it.
-export const Select = ({ children, value, onValueChange, ...props }) => {
+export const Select = ({ children, value, onValueChange, ...props }: any) => {
     // The component passes SelectTrigger and SelectContent. We need to extract the SelectItems from the content.
     const kids = Children.toArray(children);
     const content = kids.find(k => k.type === SelectContent);
@@ -14,7 +14,7 @@ export const Select = ({ children, value, onValueChange, ...props }) => {
         </select>
     );
 };
-export const SelectTrigger = ({ children }) => <>{children}</>; // Render nothing, as select will be the trigger
-export const SelectContent = ({ children }) => <>{children}</>; // Just a container for options
-export const SelectItem = ({ children, ...props }) => <option {...props}>{children}</option>;
-export const SelectValue = ({ placeholder }) => <>{/* We can't easily show a placeholder in a native select like this, so we render nothing. The label is separate anyway. */}</>;
+export const SelectTrigger = ({ children }: any) => <>{children}</>; // Render nothing, as select will be the trigger
+export const SelectContent = ({ children }: any) => <>{children}</>; // Just a container for options
+export const SelectItem = ({ children, ...props }: any) => <option {...props}>{children}</option>;
+export const SelectValue = ({ placeholder }: any) => <>{/* We can't easily show a placeholder in a native select like this, so we render nothing. The label is separate anyway. */}</>;
