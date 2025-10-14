@@ -61,7 +61,7 @@ const COIN_TYPES = {
   '145': 'Bitcoin Cash (BCH)'
 }
 
-export function PathExplorer({ mnemonic }: PathExplorerProps) {
+export function SemanticPath({ mnemonic }: PathExplorerProps) {
   const [selectedTemplate, setSelectedTemplate] = useState<string>('bip44')
   const [purpose, setPurpose] = useState<string>('44')
   const [coinType, setCoinType] = useState<string>('0')
