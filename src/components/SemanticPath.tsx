@@ -8,7 +8,6 @@ import { Separator } from './ui/separator'
 import { Alert, AlertDescription } from './ui/alert'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { TreeStructure, Path, Info } from '@phosphor-icons/react'
-import { useKV } from '@github/spark/hooks'
 
 interface PathExplorerProps {
   mnemonic: string
@@ -71,7 +70,7 @@ export function PathExplorer({ mnemonic }: PathExplorerProps) {
   const [addressIndex, setAddressIndex] = useState<string>('0')
   const [customPath, setCustomPath] = useState<string>('')
   const [isCustomMode, setIsCustomMode] = useState(false)
-  const [derivationExamples] = useKV<Array<{bip: string, path: string, description: string}>>('derivation-examples', [])
+  const derivationExamples: Array<{bip: string, path: string, description: string}> = []
 
   const buildPath = () => {
     if (isCustomMode) return customPath

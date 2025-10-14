@@ -9,7 +9,6 @@ import { Badge } from './ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Copy, Shuffle, CheckCircle, XCircle, Play } from '@phosphor-icons/react'
 import { toast } from 'sonner'
-import { useKV } from '@github/spark/hooks'
 
 interface MnemonicGeneratorProps {
   mnemonic: string
@@ -20,8 +19,8 @@ export function MnemonicGenerator({ mnemonic, setMnemonic }: MnemonicGeneratorPr
   const [wordCount, setWordCount] = useState<string>('12')
   const [isValid, setIsValid] = useState<boolean | null>(null)
   const [entropy, setEntropy] = useState<string>('')
-  const [sampleMnemonic] = useKV('sample-mnemonic', '')
-  const [educationalTips] = useKV<Array<{title: string, content: string}>>('educational-tips', [])
+  const sampleMnemonic = ''
+  const educationalTips: Array<{title: string, content: string}> = []
 
   const generateMnemonic = () => {
     try {
