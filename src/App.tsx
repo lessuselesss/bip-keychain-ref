@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Shield, Key, Info } from '@phosphor-icons/react'
-import { MnemonicGenerator } from '@/components/MnemonicGenerator'
+import { MnemonicGenerator } from '@/components/MnemonicGeneration'
 import { KeyDerivation } from '@/components/KeyDerivation'
 import { PathExplorer } from '@/components/PathExplorer'
 import { SemanticPath } from '@/components/SemanticPath'
