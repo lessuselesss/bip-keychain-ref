@@ -1,10 +1,10 @@
-import React from 'react';
+import { Children } from 'react';
 
 // A simple mock that renders a native select element.
 // This is enough to test the functionality of the component using it.
 export const Select = ({ children, value, onValueChange, ...props }) => {
     // The component passes SelectTrigger and SelectContent. We need to extract the SelectItems from the content.
-    const kids = React.Children.toArray(children);
+    const kids = Children.toArray(children);
     const content = kids.find(k => k.type === SelectContent);
     const options = content ? content.props.children : [];
 
